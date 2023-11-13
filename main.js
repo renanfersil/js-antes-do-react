@@ -91,8 +91,22 @@ document.body.innerText = user.address[key]
 
 const array = [1, 2, 3, 4, 5];
 
-for (const i of array) {
-  document.body.innerText += i;
-}
+//Opções para percorrer Array
 
-document.body.innerText = user
+//for (const i of array) {
+//  document.body.innerText += i;
+//}
+
+//array.forEach(item => {
+//  document.body.innerText += item;
+//})
+
+const novoArray = [];
+
+array.forEach(item => {
+  novoArray.push(item * 2);
+})
+
+
+
+//document.body.innerText = user
