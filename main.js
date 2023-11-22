@@ -85,28 +85,105 @@ const user = {
 const key = 'street';
 
 document.body.innerText = user.address[key]
-*/
 
-// Métodos de Array
+
+//Metódos mais importantes, map, filter, every, some, find, findIndex, reduce
+
+//map
 
 const array = [1, 2, 3, 4, 5];
 
 //Opções para percorrer Array
 
-//for (const i of array) {
+// for (const i of array) {
 //  document.body.innerText += i;
-//}
+// }
 
-//array.forEach(item => {
-//  document.body.innerText += item;
-//})
+//  const novoArray = [];
 
-const novoArray = [];
+//  array.forEach(item => {
+//    novoArray.push(item * 2);
+//  })
 
-array.forEach(item => {
-  novoArray.push(item * 2);
+const novoArray = array.map(item => {
+  if (item % 2 === 0) {
+    return item * 10;
+  }
+
+  return item;
 })
 
 
+//filter
 
-//document.body.innerText = user
+const array = [1, 2, 3, 4, 5];
+
+const novoArray = array
+  .filter(item => item % 2 !== 0)
+  .map(item => item * 10)
+
+
+//every
+
+const array = [1, 2, 3, 4, 5];
+
+const TodosItensSaoNumeros = array.every(item => {
+  return typeof item === 'number';
+});
+
+
+//some
+
+const array = [1, 2, 3, 4, 5];
+
+const peloMenosUmItemNaoEUmNumero = array.some(item => {
+  return typeof item !== 'number';
+})
+
+
+//find 
+
+const array = [1, 2, 3, 4, 5];
+
+const par = array.find(item => item % 2 === 0);
+
+//findIndex
+
+const array = [1, 2, 3, 4, 5];
+
+const par = array.findIndex(item => item % 2 === 0);
+
+
+//reduce
+
+const array = [1, 2, 3, 4, 5];
+
+const soma = array.reduce((acc, item) => {
+  return acc + item
+}, 0)
+
+document.body.innerText = JSON.stringify(soma)
+
+//Template Literals
+
+const name = 'Renan';
+const message = `Bem-vindo, ${name ? name : 'visitante'}`;
+
+document.body.innerText = message
+
+//Promises
+//.the/.cath
+
+const somaDoisNumeros = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b);
+    }, 2000);
+  });
+}
+
+somaDoisNumeros(1, 3) 
+  .then(soma => {
+    document.body.innerText = soma
+  });
+  */sw
