@@ -186,4 +186,19 @@ somaDoisNumeros(1, 3)
   .then(soma => {
     document.body.innerText = soma
   });
-  */sw
+  */
+
+fetch('https://api.github.com/users/renanfersil')
+  .then(response => {
+    return response.json();
+  })
+  .then(body => {
+    console.log(body)
+  })
+
+  .catch(err => {
+    console.log(err)
+  })
+  .finally(() => {
+    console.log('deu')
+  })
