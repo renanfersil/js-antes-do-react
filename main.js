@@ -186,7 +186,7 @@ somaDoisNumeros(1, 3)
   .then(soma => {
     document.body.innerText = soma
   });
-  */
+ 
 
 fetch('https://api.github.com/users/renanfersil')
   .then(response => {
@@ -202,3 +202,44 @@ fetch('https://api.github.com/users/renanfersil')
   .finally(() => {
     console.log('deu')
   })
+
+  async function buscaDadosNoGitHub() { 
+    const response = await fetch('https://api.github.com/users/renanfersil');
+    const body = await response.json();
+
+    console.log(body);
+  }
+
+  buscaDadosNoGitHub();
+
+  async function buscaDadosNoGitHub() { 
+   try {
+    const response = await fetch('https://api.github.com/users/renanfersil');
+    const body = await response.json();
+
+    console.log(body);
+    //return body.name;
+   } catch (err) {
+    console.log(err);
+   } finally {
+    console.log('deu')
+   }    
+}
+
+  buscaDadosNoGitHub();
+  //buscaDadosNoGitHub().then(name => {
+  //  console.log(name)
+  //});
+ 
+
+import { soma, sub, PI } from "./lib/math";
+
+  console.log(soma(1, 2))
+  console.log(sub(3, 2))
+  console.log(PI)
+  
+import * as math from './lib/math'
+
+console.log(math.soma(1, 2));
+
+  //Name Export
